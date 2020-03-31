@@ -1,0 +1,14 @@
+[user]
+	email = a0919610611@gmail.com
+	name = Yu-Fu Fu
+[core]
+	excludesfile = ~/.gitignore
+    fileMode = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[status]
+	submoduleSummary = true

@@ -1,0 +1,11 @@
+path=($path /usr/local/sbin $HOME/gocode/bin /usr/local/bin:$HOME/.composer/vendor/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
+path+=("/Users/fuyu0425/Applications/Wine Stable.app/Contents/Resources/start/bin" "/Users/fuyu0425/Applications/Wine Stable.app/Contents/Resources/wine/bin")
+path+=($HOME/cf_submit)
+path+=($HOME/.cabal/bin)
+path=(/opt/local/bin /opt/local/sbin $path)
+path+=("/Users/fuyu0425/.local/bin" "/Users/fuyu0425/.stack/programs/x86_64-osx/ghc-8.6.5/bin")
+path+=("$HOME/.cabal/bin")
+path+=("$HOME/Library/Python/3.8/bin/")
+path+=("/Users/fuyu0425/project/Sinica/cryptoline-public/scripts")
+
+export EDITOR=nvim

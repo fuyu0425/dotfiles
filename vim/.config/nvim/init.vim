@@ -1,0 +1,1 @@
+/Users/fuyu0425/.vimrc
