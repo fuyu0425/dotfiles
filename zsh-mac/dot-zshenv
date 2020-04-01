@@ -1,4 +1,4 @@
-path=($path /usr/local/sbin $HOME/gocode/bin /usr/local/bin:$HOME/.composer/vendor/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
+path=(/usr/local/sbin $HOME/gocode/bin /usr/local/bin:$HOME/.composer/vendor/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 path+=("/Users/fuyu0425/Applications/Wine Stable.app/Contents/Resources/start/bin" "/Users/fuyu0425/Applications/Wine Stable.app/Contents/Resources/wine/bin")
 path+=($HOME/cf_submit)
 path+=($HOME/.cabal/bin)

@@ -1,0 +1,5 @@
+#!/bin/sh
+dir=$1
+find ${dir} -type d -exec chmod ugo+rx {} \;
+chmod u+rw,g+r,o+r -R ${dir};
+

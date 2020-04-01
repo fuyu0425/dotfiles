@@ -11,7 +11,6 @@ cat /etc/shells | grep -q "zsh"
 have_zsh=$?
 
 mkdir -p $HOME/bin
-cp -rn $here/common/bin $HOME/bin
 
 
 echo "install YouCompletme? (y/n) default is y"
@@ -21,11 +20,6 @@ if echo "${answer:=y}"|grep -iq '^y' ;then
     install_youcompletme=1
 else
     install_youcompletme=0
-fi
-
-# install oh-my-zsh
-if [ ! -d $HOME/.oh-my-zsh ];then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 # Darwin is MacOS
@@ -39,13 +33,6 @@ elif [ $OS = "Linux" ] ;then
 fi
 
 $STOW zsh-common
-
-# My Custom theme
-ln -fs $here/misc/fuyu0425.zsh-theme $HOME/.oh-my-zsh/themes
-git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
-
-
-echo "common settings start"
 
 $STOW tmux
 $STOW vim
