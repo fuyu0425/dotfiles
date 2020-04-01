@@ -102,7 +102,7 @@ zplug "djui/alias-tips"
 zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
