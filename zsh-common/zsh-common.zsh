@@ -93,7 +93,6 @@ zplug "plugins/copydir", from:oh-my-zsh
 zplug "plugins/copyfile", from:oh-my-zsh
 zplug "plugins/copybuffer", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
-zplug "plugins/fzf", from:oh-my-zsh
 
 ## macOS only
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
@@ -101,6 +100,10 @@ zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
 # Tips for aliases
 zplug "djui/alias-tips"
+
+# fzf
+zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+zplug "junegunn/fzf", use:"shell/*.zsh", defer:2, on:"junegunn/fzf-bin"
 
 zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
 
