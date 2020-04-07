@@ -12,3 +12,5 @@
 	d = difftool
 [status]
 	submoduleSummary = true
+[credential]
+        helper = cache

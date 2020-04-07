@@ -145,7 +145,7 @@ func PY()
     exec "!chmod +x %"
     exec "! ./%"
 endfunc
-map <C-A> ggVG"+y"
+" map <C-A> ggVG"+y"
 vmap <C-C> "+y"
 nnoremap <F5> :NERDTreeToggle<CR>
 nmap <silent> <leader>t :NERDTreeTabsToggle
