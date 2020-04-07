@@ -83,7 +83,10 @@ zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-prompt", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
+## tmux
+zplug "plugins/tmux", from:oh-my-zsh, defer:3
+    # ZSH_TMUX_AUTOSTART=true
+    # ZSH_TMUX_AUTOQUIT=false
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
@@ -102,17 +105,10 @@ zplug "djui/alias-tips"
 
 zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
 
-# Then, source plugins and add commands to $PATH
-zplug load
-# zplug load --verbose
+
+
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -217,7 +213,6 @@ ZSH_COMMAND_TIME_MIN_SECONDS=1
 ZSH_COMMAND_TIME_ECHO=1
 
 # solve emacs shell problem
-export EMACS="*term*"
 
 alias sudo='sudo '
 function git-next() {
@@ -238,3 +233,15 @@ function tab-date-r(){
     compinit
     zstyle ':completion:*' file-sort modification reverse
 }
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+# zplug load --verbose
+zplug load
