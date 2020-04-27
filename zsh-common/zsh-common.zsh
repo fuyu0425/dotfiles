@@ -73,7 +73,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-synta
 
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "popstas/zsh-command-time"
-zplug "rupa/z", use:z.sh
+# zplug "rupa/z", use:z.sh
 
 # Plugins from oh my zsh
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
@@ -84,8 +84,6 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-prompt", from:oh-my-zsh
 ## tmux
 zplug "plugins/tmux", from:oh-my-zsh, defer:3
-    # ZSH_TMUX_AUTOSTART=true
-    # ZSH_TMUX_AUTOQUIT=false
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
@@ -93,10 +91,10 @@ zplug "plugins/copydir", from:oh-my-zsh
 zplug "plugins/copyfile", from:oh-my-zsh
 zplug "plugins/copybuffer", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
 
 ## macOS only
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
 # Tips for aliases
 zplug "djui/alias-tips"
@@ -105,8 +103,21 @@ zplug "djui/alias-tips"
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 zplug "junegunn/fzf", use:"shell/*.zsh", defer:2, on:"junegunn/fzf-bin"
 
+#fasd
+zplug "clvv/fasd", as:command, use:fasd
+zplug "plugins/fasd", from:oh-my-zsh, if:"(( $+commands[fasd] ))", on:"clvv/fasd"
+zplug "wookayin/fzf-fasd"
+
 zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
 
+case `uname` in
+    Darwin)
+        zplug "plugins/osx", from:oh-my-zsh
+        zplug "tysonwolker/iterm-tab-colors"
+        ;;
+    Linux)
+        ;;
+esac
 
 
 # You may need to manually set your language environment
@@ -156,7 +167,7 @@ unproxy(){
 }
 
 path=($HOME/bin $path)
-umask 077
+# umask 077
 # If command execution time above min. time, plugins will not output time.
 ZSH_COMMAND_TIME_MIN_SECONDS=1
 
@@ -167,7 +178,7 @@ ZSH_COMMAND_TIME_ECHO=1
 
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check; then
+if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
         echo; zplug install
