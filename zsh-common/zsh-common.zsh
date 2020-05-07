@@ -108,7 +108,7 @@ zplug "junegunn/fzf", use:"shell/*.zsh", defer:2, on:"junegunn/fzf-bin"
 
 #fasd
 zplug "clvv/fasd", as:command, use:fasd
-zplug "plugins/fasd", from:oh-my-zsh, if:"(( $+commands[fasd] ))", on:"clvv/fasd"
+zplug "plugins/fasd", from:oh-my-zsh, on:"clvv/fasd"
 zplug "wookayin/fzf-fasd"
 
 # zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
