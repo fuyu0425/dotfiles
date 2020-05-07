@@ -79,7 +79,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 # ZSH_COMMAND_TIME_MIN_SECONDS=1
 # Set it to "" for disable echo `time: xx`.
 # ZSH_COMMAND_TIME_ECHO=1
-# zplug "rupa/z", use:z.sh
+zplug "rupa/z", use:z.sh, if:"(( ! $+commands[fasd] ))"
 
 # Plugins from oh my zsh
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
