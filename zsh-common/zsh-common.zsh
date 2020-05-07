@@ -62,17 +62,23 @@ fi
 
 source $HOME/.zplug/init.zsh
 
+ZPLUG_LOG_LOAD_FAILURE=true
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # zsh users
 zplug "zsh-users/zsh-completions",              defer:0
 zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow" #support 256
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 
 
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "popstas/zsh-command-time"
+# zplug "popstas/zsh-command-time"
+# If command execution time above min. time, plugins will not output time.
+# ZSH_COMMAND_TIME_MIN_SECONDS=1
+# Set it to "" for disable echo `time: xx`.
+# ZSH_COMMAND_TIME_ECHO=1
 # zplug "rupa/z", use:z.sh
 
 # Plugins from oh my zsh
@@ -93,9 +99,6 @@ zplug "plugins/copybuffer", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 
-## macOS only
-zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-
 # Tips for aliases
 zplug "djui/alias-tips"
 
@@ -108,12 +111,13 @@ zplug "clvv/fasd", as:command, use:fasd
 zplug "plugins/fasd", from:oh-my-zsh, if:"(( $+commands[fasd] ))", on:"clvv/fasd"
 zplug "wookayin/fzf-fasd"
 
-zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
+# zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 case `uname` in
     Darwin)
         zplug "plugins/osx", from:oh-my-zsh
-        zplug "tysonwolker/iterm-tab-colors"
+        # zplug "tysonwolker/iterm-tab-colors"
         ;;
     Linux)
         ;;
@@ -153,26 +157,8 @@ export TERM='xterm-256color'
 export GOPATH=~/gocode
 
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow" #support 256
-
-proxy(){
-    export https_proxy=$1
-    export http_proxy=$1
-    echo "proxy is set to $1"
-}
-unproxy(){
-    unset https_proxy
-    unset http_proxy
-    echo "proxy is unset"
-}
-
 path=($HOME/bin $path)
 # umask 077
-# If command execution time above min. time, plugins will not output time.
-ZSH_COMMAND_TIME_MIN_SECONDS=1
-
-# Set it to "" for disable echo `time: xx`.
-ZSH_COMMAND_TIME_ECHO=1
 
 # solve emacs shell problem
 
@@ -184,7 +170,6 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-
 # Then, source plugins and add commands to $PATH
 # zplug load --verbose
 zplug load
@@ -207,3 +192,17 @@ function tab-date-r(){
     compinit
     zstyle ':completion:*' file-sort modification reverse
 }
+
+proxy(){
+    export https_proxy=$1
+    export http_proxy=$1
+    echo "proxy is set to $1"
+}
+unproxy(){
+    unset https_proxy
+    unset http_proxy
+    echo "proxy is unset"
+}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
