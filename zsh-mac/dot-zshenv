@@ -7,5 +7,6 @@ path+=("/Users/fuyu0425/.local/bin" "/Users/fuyu0425/.stack/programs/x86_64-osx/
 path+=("$HOME/.cabal/bin")
 path+=("$HOME/Library/Python/3.8/bin/")
 path+=("/Users/fuyu0425/project/Sinica/cryptoline-public/scripts")
+path=(/usr/local/opt/make/libexec/gnubin $path)
 
 export EDITOR=nvim
