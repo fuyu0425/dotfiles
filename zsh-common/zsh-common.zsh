@@ -83,6 +83,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 
 # Plugins from oh my zsh
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
+zplug "plugins/asdf", from:oh-my-zsh
 #zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
