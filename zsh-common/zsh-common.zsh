@@ -83,7 +83,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 
 # Plugins from oh my zsh
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
-zplug "plugins/asdf", from:oh-my-zsh
+zplug "plugins/asdf", from:oh-my-zsh, defer:2
 #zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
@@ -207,3 +207,8 @@ unproxy(){
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if (( $+commands[keychain] ));then
+    [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
+    [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
+fi
