@@ -31,7 +31,7 @@ main()
   tmux set-option -g clock-mode-style 12
 
   tmux set-option -g status-justify centre
-  # set length 
+  # set length
   tmux set-option -g status-left-length 100
   tmux set-option -g status-right-length 100
 
@@ -45,15 +45,16 @@ main()
   # status bar
   tmux set-option -g status-style "bg=${gray},fg=${white}"
 
-  tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} #S " 
-  # tmux set-option -ga status-left "#[bg=${pink},fg=${dark_gray}] #S " 
+  tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} #S "
+  # tmux set-option -ga status-left "#[bg=${pink},fg=${dark_gray}] #S "
 
-  tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
+  # tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] #($current_dir/battery.sh) "
+  tmux set-option -g  status-right "#[fg=${dark_gray},bg=${pink}] ${HOST:-$(hostname)} "
   # tmux set-option -ga status-right "#[fg=${dark_gray},bg=${cyan}]#($current_dir/network.sh) "
-  # tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #(cat $current_dir/../data/weather.txt) " 
+  # tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #(cat $current_dir/../data/weather.txt) "
   tmux set-option -ga status-right "#[fg=${white},bg=${dark_purple}] %a %m/%d %I:%M %p #(date +%Z) "
-  
-  # window tabs 
+
+  # window tabs
   tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${dark_purple}] #I #W "
   tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=${gray}] #I #W "
 }
