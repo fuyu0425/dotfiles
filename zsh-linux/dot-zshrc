@@ -8,6 +8,8 @@ alias ll='ls -al'
 alias la='ls -a'
 if (( $+commands[exa] )); then
   alias ls='exa --color=always'
+else
+  alias ls='ls --color=always'
 fi
 if (( $+commands[nvim] )); then
     alias vi='nvim'
