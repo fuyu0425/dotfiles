@@ -4,16 +4,26 @@
 [core]
 	excludesfile = ~/.gitignore
     fileMode = false
-    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    ; pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
 [interactive]
-    diffFilter = delta --color-only
+    ; diffFilter = delta --color-only
 [alias]
 	d = difftool
 [status]
 	submoduleSummary = true
 [credential]
     helper = cache
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+    ui = auto
+
+[includeIf "gitdir:~/sslab/"]
+	path = ~/sslab/.gitconfig

@@ -1,17 +1,15 @@
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_AUTOQUIT=false
-source ~/zsh-common.zsh
 export HOST="Leo-MacBook"
+source ~/zsh-common.zsh
 
 # for makefile
 export CC='gcc'
 export CXX='g++'
 export CCOV='gcov'
-
 # OCaml
-eval `opam config env`
+# eval `opam config env`
 disable r
-eval "$(direnv hook zsh)"
 
 alias sudo='sudo '
 alias ls='ls -vG'

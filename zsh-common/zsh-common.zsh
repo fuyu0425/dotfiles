@@ -88,9 +88,10 @@ zplug "plugins/asdf", from:oh-my-zsh, defer:2
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-prompt", from:oh-my-zsh
+#zplug "plugins/git-prompt", from:oh-my-zsh
 ## tmux
 zplug "plugins/tmux", from:oh-my-zsh, defer:3
+zplug "plugins/direnv", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
@@ -112,8 +113,12 @@ zplug "clvv/fasd", as:command, use:fasd
 zplug "plugins/fasd", from:oh-my-zsh, on:"clvv/fasd"
 zplug "wookayin/fzf-fasd"
 
+# zplug "marlonrichert/zsh-autocomplete"
+
 # zplug "~/.zsh", from:local, use:"fuyu0425.zsh-theme", as:theme
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+
+zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 
 case `uname` in
     Darwin)
@@ -204,6 +209,19 @@ unproxy(){
     unset http_proxy
     echo "proxy is unset"
 }
+
+function ranger-cd() {
+    tmpfile="/tmp/pwd-from-ranger";
+    ranger --choosedir=$tmpfile;
+    rangerpwd=$(cat $tmpfile);
+    if [ "$PWD" != $rangerpwd ];then
+        cd $rangerpwd;
+    if [ "$PWD" != $rangerpwd ];then
+        \\cd $rangerpwd;
+    fi
+    fi
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
