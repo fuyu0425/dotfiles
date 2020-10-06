@@ -1,0 +1,2 @@
+export HOST="Linux"
+command -v nvim >/dev/null && export EDITOR=nvim

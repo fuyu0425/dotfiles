@@ -1,7 +1,6 @@
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 source ~/zsh-common.zsh
-export HOST="Linux"
 
 alias sudo='sudo '
 alias ls='ls -vG'
