@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+sudo apt install -y --no-install-recommends libevent-dev ncurses-dev build-essential bison pkg-config
+
+TMP_DIR=$(mktemp -d)
+cd $TMP_DIR
+
+JOBS=$(($(nproc)/2))
+
+wget https://github.com/tmux/tmux/releases/download/3.1c/tmux-3.1c.tar.gz
+tar xf tmux-3.1c.tar.gz
+cd tmux-3.1c
+./configure --prefix=$HOME/.local
+make install -j $JOBS
