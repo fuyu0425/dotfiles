@@ -222,6 +222,10 @@ function ranger-cd() {
     fi
 }
 
+function mcd(){
+    mkdir -p $1 && cd $1
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -229,4 +233,5 @@ function ranger-cd() {
 if (( $+commands[keychain] ));then
     [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
     [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
+    [[ -f $HOME/.ssh/id_ed25519 ]] && keychain $HOME/.ssh/id_ed25519 2>/dev/null
 fi

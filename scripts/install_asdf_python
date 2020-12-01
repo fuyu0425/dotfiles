@@ -1,0 +1,9 @@
+#!/bin/bash -e
+if ! command -v asdf &> /dev/null
+then
+    echo "asdf could not be found"
+    exit -1
+fi
+asdf plugin-add python
+asdf install python 3.9.0
+asdf global python 3.9.0 system
