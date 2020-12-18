@@ -11,5 +11,6 @@ path=(/usr/local/opt/make/libexec/gnubin $path)
 path+=(/opt/local/libexec/llvm-10/bin)
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 export EDITOR=nvim
+export UNISONBACKUPDIR=$HOME/unison_backup
 
 if [ -e /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
