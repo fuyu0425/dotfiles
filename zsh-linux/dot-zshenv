@@ -1,3 +1,4 @@
 export HOST="Linux"
 command -v nvim >/dev/null && export EDITOR=nvim
+path=($HOME/.local/bin $path)
 export UNISONBACKUPDIR=$HOME/unison_backup
