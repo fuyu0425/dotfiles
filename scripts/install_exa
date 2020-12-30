@@ -9,4 +9,4 @@ DIR=${FILE%.*}
 
 wget $URL
 unzip $FILE
-cp $DIR/exa-linux-x86_64 $HOME/.local/bin/exa
+cp exa-linux-x86_64 $HOME/.local/bin/exa
