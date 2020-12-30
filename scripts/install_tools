@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname $(realpath $0))
+
+sudo apt install -y --no-install-recommends highlight fd-find unzip
+
+$SCRIPT_DIR/install_stow
+$SCRIPT_DIR/install_exa

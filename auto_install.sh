@@ -1,4 +1,15 @@
-#!/bin/sh -xe
+#!/bin/bash -v
+
+SCRIPT_DIR=$(dirname $(realpath $0))
+export PATH=$HOME/.local/bin:$PATH
+
+if ! command -v stow &> /dev/null
+then
+    echo "stow could not be found, installing"
+    $SCRIPT_DIR/scripts/install_stow
+    hash -r
+fi
+
 STOW="stow --dotfiles"
 OS=$(uname -s)
 echo "OS is $OS"

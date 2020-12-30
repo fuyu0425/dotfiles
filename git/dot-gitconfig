@@ -3,8 +3,8 @@
 	name = Yu-Fu Fu
 [core]
 	excludesfile = ~/.gitignore
-    fileMode = false
-    ; pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+  fileMode = false
+  ; pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [diff]
 	tool = vimdiff
 [difftool]
@@ -16,14 +16,18 @@
 [status]
 	submoduleSummary = true
 [credential]
-    helper = cache
+	helper = cache
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [color]
-    ui = auto
+  ui = auto
+
+; local overwrite
+[include]
+  path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/sslab/"]
 	path = ~/sslab/.gitconfig
