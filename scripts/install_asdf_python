@@ -1,4 +1,7 @@
 #!/bin/bash -e
+export PATH=$HOME/.asdf/bin:$PATH
+hash -r
+
 if ! command -v asdf &> /dev/null
 then
     echo "asdf could not be found"

@@ -2,6 +2,8 @@
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 export PATH=$HOME/.local/bin:$PATH
+$SCRIPT_DIR/scripts/install_tools
+hash -r
 
 if ! command -v stow &> /dev/null
 then
@@ -63,3 +65,5 @@ echo "complete"
 
 # git config
 git config --global credential.helper cache
+
+exec zsh

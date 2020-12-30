@@ -1,5 +1,19 @@
 #!/bin/bash -e
 
+SCRIPT_DIR=$(dirname $(realpath $0))
+COMMAND=unison
+VERSION=2.51.3
+
+if command -v $COMMAND &> /dev/null; then
+    echo "$COMMAND is already installed, check version"
+    exit 0
+    # version=$(tmux -V | grep -oP 'tmux \K.*')
+    # if [ $version = $VERSION ]; then
+    #     echo "version $version match, exits"
+    #     exit 0
+    # fi
+fi
+
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 

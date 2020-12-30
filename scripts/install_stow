@@ -1,5 +1,17 @@
 #!/bin/bash -e
 
+SCRIPT_DIR=$(dirname $(realpath $0))
+VERSION=2.3.1
+
+if command -v stow &> /dev/null; then
+    echo "stow is already installed, check version"
+    version=$(stow -V | grep -oP 'version \K.*')
+    if [ $version = $VERSION ]; then
+       echo "version $version match, exits"
+       exit 0
+    fi
+fi
+
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 
