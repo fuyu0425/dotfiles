@@ -7,7 +7,7 @@ sudo apt install -y --no-install-recommends \
 
 $SCRIPT_DIR/install_asdf
 $SCRIPT_DIR/install_stow
-$SCIRPT_DIR/install_tmux
+$SCRIPT_DIR/install_tmux
 $SCRIPT_DIR/install_exa
 $SCRIPT_DIR/install_rg
 $SCRIPT_DIR/install_unison
