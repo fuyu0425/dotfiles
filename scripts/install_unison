@@ -23,3 +23,6 @@ FILE=$(basename $URL)
 wget $URL
 tar xf $FILE
 cp -r bin/* $HOME/.local/bin
+
+# setup shared dir
+mkdir -p $HOME/unison_shared
