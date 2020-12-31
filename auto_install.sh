@@ -39,7 +39,7 @@ $STOW vim
 $STOW git
 $STOW editorconfig
 
-$VIM=vim
+VIM=vim
 if command -v nvim &> /dev/null; then
     VIM=nvim
 fi
