@@ -42,6 +42,6 @@ if command -v nvim &> /dev/null; then
     VIM=nvim
 fi
 
-vim +PlugInstall +qall
+$VIM +PlugInstall +qall
 
 exec zsh
