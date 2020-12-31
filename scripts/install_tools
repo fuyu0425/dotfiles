@@ -2,8 +2,20 @@
 
 SCRIPT_DIR=$(dirname $(realpath $0))
 
-sudo apt install -y --no-install-recommends \
-     highlight fd-find unzip neovim direnv
+pkg_list=(
+    highlight
+    fd-find
+    unzip
+    neovim
+    direnv
+)
+
+
+# workaround for missing package because of different ubuntu version
+for pkg in "${pkg_list[@]}";
+do
+    sudo apt install -y --no-install-recommends $pkg
+done
 
 $SCRIPT_DIR/install_asdf
 $SCRIPT_DIR/install_stow
