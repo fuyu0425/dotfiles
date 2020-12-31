@@ -8,6 +8,10 @@ pkg_list=(
     unzip
     neovim
     direnv
+    xclip
+    xsel
+    docker.io
+    zsh
 )
 
 
