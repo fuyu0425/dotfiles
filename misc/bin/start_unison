@@ -1,0 +1,29 @@
+#!/bin/bash -e
+
+servers=(
+)
+
+pids=()
+
+for server in "${servers[@]}"; do
+    unison $server &
+    pid=$!
+    pids+=( $pid )
+    echo -e "$server:\t pid $pid"
+done
+
+while true; do
+    for pid_idx in "${!pids[@]}"; do
+        pid=${pids[$pid_idx]}
+        if ! kill -0 "$pid" 2>/dev/null; then
+            echo "$pid exits"
+            unset "pids[$pid_idx]"
+            break 2
+        fi
+    done
+    sleep 5;
+done
+
+for pid in "${pids[@]}"; do
+    kill -SIGINT $pid
+done

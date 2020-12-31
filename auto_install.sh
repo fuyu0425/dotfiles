@@ -23,6 +23,8 @@ echo "the dotfile location is $here"
 cat /etc/shells | grep -q "zsh"
 mkdir -p $HOME/bin
 
+cp $SCRIPT_DIR/misc/bin/* $HOME/bin
+
 # Darwin is MacOS
 if [ $OS = "Darwin" ] ;then
     $STOW zsh-mac
