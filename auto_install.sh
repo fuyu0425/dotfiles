@@ -37,6 +37,11 @@ $STOW vim
 $STOW git
 $STOW editorconfig
 
+$VIM=vim
+if command -v nvim &> /dev/null; then
+    VIM=nvim
+fi
+
 vim +PlugInstall +qall
 
 exec zsh
