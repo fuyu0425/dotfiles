@@ -1,0 +1,19 @@
+#!/bin/bash
+unset_prefix() {
+   tmux set -ug prefix none
+}
+
+set_prefix(){
+   tmux set -g prefix C-a
+}
+
+toggle_prefix(){
+  local current_prefix=$(tmux show-options -gqv prefix)
+  if [ $current_prefix = "C-a" ]; then
+     unset_prefix
+  else
+     set_prefix
+  fi
+}
+
+toggle_prefix
