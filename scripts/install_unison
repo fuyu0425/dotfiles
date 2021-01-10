@@ -26,3 +26,4 @@ cp -r bin/* $HOME/.local/bin
 
 # setup shared dir
 mkdir -p $HOME/unison_shared
+mkdir -p $HOME/unison_backup
