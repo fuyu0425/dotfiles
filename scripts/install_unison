@@ -17,7 +17,7 @@ fi
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 
-URL=https://github.com/bcpierce00/unison/releases/download/v2.51.3/unison-v2.51.3+ocaml-4.11.1+x86_64.linux.tar.gz
+URL=https://github.com/bcpierce00/unison/releases/download/v2.51.3/unison-v2.51.3+ocaml-4.05.0+x86_64.linux.tar.gz
 FILE=$(basename $URL)
 
 wget $URL
