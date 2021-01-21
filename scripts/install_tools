@@ -13,6 +13,7 @@ pkg_list=(
     xsel
     docker.io
     zsh
+    ruby
 )
 
 

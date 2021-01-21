@@ -2,3 +2,9 @@ export HOST=$(hostname)
 command -v nvim >/dev/null && export EDITOR=nvim
 path=($HOME/.asdf/shims $HOME/.asdf/bin $HOME/.local/bin $HOME/bin $path)
 export UNISONBACKUPDIR=$HOME/unison_backup
+
+LOCAL_ZSHENV=$HOME/.zshenv.local
+
+if [ -e $LOCAL_ZSHENV ]; then
+   source $LOCAL_ZSHENV
+fi

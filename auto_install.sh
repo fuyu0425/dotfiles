@@ -32,6 +32,9 @@ elif [ $OS = "Linux" ] ;then
     $STOW zsh-linux
 fi
 
+LOCAL_ZSHENV=$HOME/.zshenv.local
+touch $LOCAL_ZSHENV
+
 $STOW zsh-common
 
 $STOW tmux
