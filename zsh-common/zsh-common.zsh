@@ -52,6 +52,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 unsetopt inc_append_history
 
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+
 export ZPLUG_HOME=$HOME/.zplug
 
 # Check if zplug is installed

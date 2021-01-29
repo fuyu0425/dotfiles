@@ -3,6 +3,7 @@
 SCRIPT_DIR=$(dirname $(realpath $0))
 
 pkg_list=(
+    curl
     highlight
     fd-find
     unzip
@@ -14,6 +15,8 @@ pkg_list=(
     docker.io
     zsh
     ruby
+    htop
+    jq
 )
 
 
@@ -29,3 +32,6 @@ $SCRIPT_DIR/install_tmux
 $SCRIPT_DIR/install_exa
 $SCRIPT_DIR/install_rg
 $SCRIPT_DIR/install_unison
+
+hash -r
+$SCRIPT_DIR/install_asdf_python
