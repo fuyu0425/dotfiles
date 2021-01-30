@@ -23,6 +23,11 @@ if (( $+commands[prettyping] )); then
     alias ping='prettyping'
 fi
 
+if (( $+commands[rmtrash] )); then
+    alias rm='rmtrash'
+fi
+
+
 ###others
 
 # OCaml

@@ -17,6 +17,7 @@ pkg_list=(
     ruby
     htop
     jq
+    trash-cli
 )
 
 
@@ -32,6 +33,7 @@ $SCRIPT_DIR/install_tmux
 $SCRIPT_DIR/install_exa
 $SCRIPT_DIR/install_rg
 $SCRIPT_DIR/install_unison
+$SCRIPT_DIR/install_rmtrash
 
 hash -r
 $SCRIPT_DIR/install_asdf_python

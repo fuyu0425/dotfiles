@@ -1,0 +1,19 @@
+#!/bin/bash
+
+COMMAND=rmtrash
+
+if command -v $COMMAND &> /dev/null; then
+    echo "$COMMAND is already installed, check version"
+    exit 0
+fi
+
+TMP_DIR=$(mktemp -d)
+cd $TMP_DIR
+
+URL=https://github.com/PhrozenByte/rmtrash/archive/v1.14.zip
+FILE=$(basename $URL)
+DIR=${FILE%.*}
+
+wget $URL
+unzip $FILE
+cp rmtrash-1.14/rmtrash rmtrash-1.14/rmdirtrash $HOME/.local/bin/
