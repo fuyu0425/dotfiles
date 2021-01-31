@@ -51,6 +51,6 @@ $VIM +PlugInstall +qall
 
 
 # htop
-cp $SCRIPT_DIR/htop/htoprc ~/.config/htop
+# cp $SCRIPT_DIR/htop/htoprc ~/.config/htop
 
 exec zsh
