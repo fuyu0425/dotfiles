@@ -103,6 +103,7 @@ zplug "plugins/copyfile", from:oh-my-zsh
 zplug "plugins/copybuffer", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
 
 # Tips for aliases
 zplug "djui/alias-tips"
@@ -219,9 +220,6 @@ function ranger-cd() {
     rangerpwd=$(cat $tmpfile);
     if [ "$PWD" != $rangerpwd ];then
         cd $rangerpwd;
-    if [ "$PWD" != $rangerpwd ];then
-        \\cd $rangerpwd;
-    fi
     fi
 }
 
@@ -229,6 +227,10 @@ function mcd(){
     mkdir -p $1 && cd $1
 }
 
+function cdtmp(){
+    DIR=$(mktemp -d);
+    cd $DIR;
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -252,6 +254,8 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 ### Fix slowness of pastes
 
+# some autoload
+autoload zmv
 
 # tmux alias
 alias tkwo='tmux kill-window -a'
