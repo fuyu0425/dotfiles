@@ -33,3 +33,5 @@ alias less="LESSOPEN=\"${LESSOPEN}\" less -R -m -N -g -i -J  --line-numbers --un
 # alias less="less -m -N -g -i -J  --line-numbers --underline-special"
 alias more='less'
 alias ls='exa --color=always'
+
+command -v nvim > /dev/null && alias vim=nvim

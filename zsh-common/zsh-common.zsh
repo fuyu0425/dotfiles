@@ -49,11 +49,15 @@ HIST_STAMPS="yyyy-mm-dd"
 
 
 # source $ZSH/oh-my-zsh.sh
+HISTSIZE=10000000
+SAVEHIST=10000000
 
-unsetopt inc_append_history
-
+setopt inc_append_history
+setopt SHARE_HISTORY     
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
+setopt HIST_IGNORE_ALL_DUPS
+setopt BANG_HIST
 
 export ZPLUG_HOME=$HOME/.zplug
 
@@ -106,7 +110,13 @@ zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
 
 # Tips for aliases
-zplug "djui/alias-tips"
+ZSH_ALIAS_FINDER_AUTOMATIC=true
+zplug "plugins/alias-finder", from:oh-my-zsh
+
+# Rust
+zplug "plugins/rust", from:oh-my-zsh
+zplug "plugins/rustup", from:oh-my-zsh
+zplug "plugins/cargo", from:oh-my-zsh
 
 # fzf
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf

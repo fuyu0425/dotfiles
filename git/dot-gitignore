@@ -86,3 +86,6 @@ tags
 
 # Coc configuration directory
 .vim
+
+compile_commands.json
+.clangd

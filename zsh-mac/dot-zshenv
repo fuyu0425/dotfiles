@@ -13,7 +13,9 @@ export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 export EDITOR=nvim
 export UNISONBACKUPDIR=$HOME/unison_backup
 
-if [ -e /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+alias vim=nvim
+
+# if [ -e /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/fuyu0425/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 LOCAL_ZSHENV=$HOME/.zshenv.local
 
