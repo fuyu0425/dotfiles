@@ -1,3 +1,7 @@
+# direnv
+.log
+.envrc
+
 .idea
 .vscode
 .DS_Store
