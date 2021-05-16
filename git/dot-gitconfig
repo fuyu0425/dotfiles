@@ -1,33 +1,43 @@
 [user]
-	email = a0919610611@gmail.com
-	name = Yu-Fu Fu
+    email = a0919610611@gmail.com
+    name = Yu-Fu Fu
 [core]
-	excludesfile = ~/.gitignore
-  fileMode = false
-  ; pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    excludesfile = ~/.gitignore
+    fileMode = false
+    pager = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    line-numbers = true
+    side-by-side = true
+    ; line-numbers-left-format = ""
+    ; line-numbers-right-format = "│ "
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false
 [interactive]
-    ; diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [alias]
-	d = difftool
+    d = difftool
 [status]
-	submoduleSummary = true
+    submoduleSummary = true
 [credential]
-	helper = cache
+    helper = cache
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [color]
-  ui = auto
+    ui = auto
 
 ; local overwrite
 [include]
-  path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/sslab/"]
-	path = ~/sslab/.gitconfig
+    path = ~/sslab/.gitconfig
