@@ -1,4 +1,9 @@
-ZSH_TMUX_AUTOSTART=true
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    ZSH_TMUX_AUTOSTART=true
+else
+    ZSH_TMUX_AUTOSTART=false
+fi
+
 ZSH_TMUX_AUTOQUIT=false
 source ~/zsh-common.zsh
 
