@@ -3,6 +3,11 @@ command -v nvim >/dev/null && export EDITOR=nvim
 path=($HOME/.asdf/shims $HOME/.asdf/bin $HOME/.local/bin $HOME/bin $path)
 export UNISONBACKUPDIR=$HOME/unison_backup
 
+PROMPT_TITLE=`dirs`
+function precmd {
+    print -Pn "\033]0;${PROMPT_TITLE:-"$USER@$HOST"}\007"
+}
+
 LOCAL_ZSHENV=$HOME/.zshenv.local
 
 if [ -e $LOCAL_ZSHENV ]; then
