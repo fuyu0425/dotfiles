@@ -177,7 +177,7 @@ export TERM='xterm-256color'
 export GOPATH=~/gocode
 
 
-path=($HOME/.local/bin $HOME/bin $path)
+path=($HOME/.local/bin $HOME/bin $GOPATH/bin $path)
 # umask 077
 
 # solve emacs shell problem

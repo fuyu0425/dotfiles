@@ -1,6 +1,7 @@
 export HOST=$(hostname)
 command -v nvim >/dev/null && export EDITOR=nvim
 path=($HOME/.asdf/shims $HOME/.asdf/bin $HOME/.local/bin $HOME/bin $path)
+path+=(/home/yufu/unison_shared/autofuzz/draw)
 export UNISONBACKUPDIR=$HOME/unison_backup
 
 PROMPT_TITLE=`dirs`
