@@ -1,0 +1,6 @@
+/*-*- mode: css; -*-*/
+element {
+    children: [ element-index,
+                element-icon,
+                element-text];
+}

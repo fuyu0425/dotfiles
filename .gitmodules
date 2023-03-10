@@ -1,3 +1,9 @@
 [submodule "alacritty/.config/alacritty/themes"]
 	path = alacritty/.config/alacritty/themes
 	url = https://github.com/alacritty/alacritty-theme
+[submodule "polybar/.config/polybar/polybar-terminal-tabs"]
+	path = polybar/.config/polybar/polybar-terminal-tabs
+	url = https://github.com/Nikzt/polybar-terminal-tabs
+[submodule "polybar/.config/polybar/polybar-i3-windows"]
+	path = polybar/.config/polybar/polybar-i3-windows
+	url = https://github.com/meelkor/polybar-i3-windows
