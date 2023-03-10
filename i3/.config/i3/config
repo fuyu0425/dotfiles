@@ -73,6 +73,7 @@ for_window [title="quake_.*"] move window to scratchpad
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+d kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
