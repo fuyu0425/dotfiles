@@ -1,0 +1,34 @@
+[general]
+
+wm_property = "name"
+
+[aliases]
+
+Alacritty = "Term"
+
+edge = "Edge"
+
+# Exact match
+"^Google-chrome-unstable$" = "Chrome-dev"
+
+# Substring match
+firefox = "Firefox"
+
+# Escape if you want to match literal periods
+"Org\\.gnome\\.Nautilus" = "Nautilus"
+
+".*NVIM" = "vim"
+".*Ghidra.*" = "Ghidra"
+
+emacs = "Emacs"
+
+[icons]
+# Microsoft-edge-dev= "🌍"
+Alacritty=""
+Microsoft-edge-dev= ""
+emacs = ""
+Emacs = ""
+
+[options]
+no_icon_names = true
+remove_duplicates = true
