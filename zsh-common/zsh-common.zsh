@@ -53,7 +53,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 
 setopt inc_append_history
-setopt SHARE_HISTORY     
+setopt SHARE_HISTORY
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt HIST_IGNORE_ALL_DUPS
@@ -245,11 +245,11 @@ function cdtmp(){
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if (( $+commands[keychain] ));then
-    [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
-    [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
-    [[ -f $HOME/.ssh/id_ed25519 ]] && keychain $HOME/.ssh/id_ed25519 2>/dev/null
-fi
+# if (( $+commands[keychain] ));then
+    # [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
+    # [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
+    # [[ -f $HOME/.ssh/id_ed25519 ]] && keychain $HOME/.ssh/id_ed25519 2>/dev/null
+# fi
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 pasteinit() {
