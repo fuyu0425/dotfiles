@@ -1,0 +1,22 @@
+/*-*- mode: css; -*-*/
+configuration {
+    location: 0;
+    yoffset: -100;
+    bw: 1;
+    modi: "window,drun,run,ssh,filebrowser,calc,combi";
+    width: 30;
+    /* work with line number */
+    lines: 15;
+    font: "Monaco 14";
+    fixed-num-lines: true;
+    show-icons: true;
+    terminal: "alacritty";
+    sort: true;
+    cycle: true;
+    sidebar-mode: true;
+    combi-modi: "window, drun, ssh, run, filebrowser";
+    /* theme: "mytheme"; */
+    matching: "fuzzy";
+    eh: 1;
+}
+/* @theme "mytheme" */

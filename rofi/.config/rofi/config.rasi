@@ -146,4 +146,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@import "my"
+@import "ramhorn"
